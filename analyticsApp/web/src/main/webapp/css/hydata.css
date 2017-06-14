@@ -1,0 +1,137 @@
+#tabselected{ border-bottom:2px solid #c0090c; background-color:#dedede;}
+#hychina_jg{background-color:#dedede;}
+/*首页下拉框*/
+.data_nav_box li.drop_down_box{background-image:url(../images/xl.png); background-size:17px 14px; background-position:center right; background-repeat:no-repeat; padding-right:10px;}
+
+
+
+
+.data_nav_box button {
+    font: inherit;
+    color: inherit;
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.data_nav_box button[disabled]{
+    cursor: default;
+}
+.data_nav_box button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+.dropdown-menu a {
+    color: #428bca;
+    text-decoration: none;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    color: #2a6496;
+    text-decoration: underline;
+}
+.dropdown-menu a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.data_nav_box .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.data_nav_box .btn.disabled,
+.data_nav_box .btn[disabled],
+
+.data_nav_box .btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+
+/*小三角*/
+.data_nav_box .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+
+
+.data_nav_box .dropdown {
+    position: relative;
+}
+.data_nav_box .dropdown-toggle:focus {
+    outline: 0;
+}
+.data_nav_box .dropdown-menu {
+    position: absolute;
+    top:0px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding:0px;
+    /*margin: 0px 0 0;*/
+    font-size: 12px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);border-bottom: none;  margin-top: 26px;
+}
+
+.data_nav_box .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.data_nav_box .dropdown-menu > li > a:hover{
+    text-decoration: none;
+}
+
+.data_nav_box .btn-group,
+.data_nav_box .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; margin:8px 2px 0 0; float:left;
+}
+.data_nav_box .btn-group > .btn,
+.data_nav_box .btn-group-vertical > .btn {
+    position: relative;
+    float: left;
+}
+.data_nav_box .dropdown-menu li{ border-bottom:1px solid #dedede; border:none; border-bottom:1px solid #dedede; width:100%; margin:0px;}
+.data_nav_box .dropdown-menu li a{ font-size:12px;}
+.data_nav_box .dropdown-menu li:hover{ background-color:#dedede;}
+.data_nav_box .btn{ border-radius:0px; border:2px solid #dedede; padding:2px 10px; margin-bottom:-2px;}
+.data_nav_box .btn:hover{ border-bottom:2px solid #c0090c; background-color:#dedede;}
+.btn-group:hover .dropdown-menu{ display:block;}

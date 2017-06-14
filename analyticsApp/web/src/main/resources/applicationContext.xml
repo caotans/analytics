@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-4.0.xsd"
+        >
+    <!--开启这个配置，spring才能识别@Scheduled注解  -->
+    <task:annotation-driven />
+
+	<!-- 激活利用注解进行装配 -->
+	<context:annotation-config />
+
+	<!-- 自动扫描,多个扫描包之间以逗号分隔  -->
+	<context:component-scan base-package="com.analytics.web.model.service,com.cfw.job,com.cfw.controller"/>
+
+	<!-- 加载配置文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 配置文件读取器，可在class中注解的方式获取properties文件中的内容  -->
+	<bean id="propertiesReader" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	 	<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:ws-config.properties</value>
+			</list>
+		</property>
+	</bean>
+    <bean id="indexService" class="com.analytics.web.model.service.impl.IndexServiceImpl"></bean>
+    <bean id="dataDownload" class="com.analytics.web.model.entity.DataDownload"></bean>
+    <bean id="downstreamService" class="com.analytics.web.model.service.impl.DownstreamServiceImpl"></bean>
+    <bean id="industryChainService" class="com.analytics.web.model.service.impl.IndustryChainServiceImpl"></bean>
+    <bean id="profitArbitrageData" class="com.analytics.web.model.entity.ProfitArbitrageData"></bean>
+    <bean id="ProfitArbitrageDataService" class="com.analytics.web.model.service.impl.ProfitArbitrageDataServiceImpl"></bean>
+    <bean id="industryData" class="com.analytics.web.model.entity.IndustryData"></bean>
+    <bean id="IndustryDataService" class="com.analytics.web.model.service.impl.IndustryDataServiceImpl"></bean>
+    <bean id="subtituteService" class="com.analytics.web.model.service.impl.SubtituteServiceImpl"></bean>
+	<import resource="spring/beans-datasource.xml"/>
+
+
+
+
+</beans>

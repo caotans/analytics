@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.analytics.web.model.mapper.ProfitArbitrageDataMapper">
+
+	<insert id="insert" parameterType="com.analytics.web.model.entity.ProfitArbitrageData" useGeneratedKeys="true" keyProperty="Id">
+		INSERT INTO AC_ProfitArbitrageData (
+			<trim prefixOverrides=",">
+			<if test="ProArbitrageCode != null"> ,ProArbitrageCode </if>
+			<if test="DataDate != null"> ,DataDate </if>
+			<if test="DataValue != null"> ,DataValue </if>
+			<if test="CreateTime != null"> ,CreateTime </if>
+			</trim>
+		) VALUES (
+			<trim prefixOverrides=",">
+                <if test="ProArbitrageCode != null"> ,#{ProArbitrageCode} </if>
+                <if test="DataDate != null"> ,#{DataDate} </if>
+                <if test="DataValue != null"> ,#{DataValue} </if>
+                <if test="CreateTime != null"> ,#{CreateTime} </if>
+			</trim>
+		)
+	</insert>
+
+    <select id="get" parameterType="java.util.Map" resultType="com.analytics.web.model.entity.ProfitArbitrageData">
+              select ProArbitrageCode,DataDate,DataValue from  AC_ProfitArbitrageData
+              <where>
+                  <if test="ProArbitrageCode!=null">ProArbitrageCode=#{ProArbitrageCode}</if>
+              </where>
+    </select>
+
+    <select id="getCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM AC_ProfitArbitrageData
+        <where>
+            <if test="ProArbitrageCode != null"> AND ProArbitrageCode = #{ProArbitrageCode} </if>
+            <if test="DataDate != null"> AND DataDate = #{DataDate} </if>
+            <if test="DataValue != null"> AND DataValue = #{DataValue} </if>
+        </where>
+    </select>
+
+    <update id="update" parameterType="com.analytics.web.model.entity.IndustryData">
+        UPDATE AC_ProfitArbitrageData
+        <set>
+            <if test="DataValue != null">  DataValue = #{DataValue}, </if>
+            <if test="CreateTime != null">  CreateTime = #{CreateTime} </if>
+        </set>
+        <where>
+            <if test="ProArbitrageCode != null"> AND ProArbitrageCode = #{ProArbitrageCode} </if>
+            <if test="DataDate != null"> AND DataDate = #{DataDate} </if>
+        </where>
+    </update>
+
+    <delete id="delete" parameterType="java.util.Map">
+        DELETE FROM AC_ProfitArbitrageData
+        <where>
+            <if test="ProArbitrageCode != null">  ProArbitrageCode = #{ProArbitrageCode} </if>
+            <if test="DataDate != null"> AND DataDate = #{DataDate} </if>
+        </where>
+    </delete>
+
+</mapper>

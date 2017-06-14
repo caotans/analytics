@@ -1,0 +1,67 @@
+.btn_def_skin{
+    border: solid 0px #ddd;
+    background: palevioletred;
+    color: gainsboro;
+}
+.c_title_skin{
+    background-image: url('../images/red.png');
+    background-color: #105171;
+}
+.tog_title_skin{
+    color: palevioletred;
+}
+
+.nav-header.collapsed > div.ac_tog:after {
+    content: url('../images/r_2@2x_red.png');
+    position: absolute;
+    display: inline-block;
+    top:10px;
+    right:35px;
+    margin-top: -10px;
+    width: 17px;
+    height: 20px;
+    padding-left: 3px;
+    line-height:18px;
+    font-size: 10px;
+    font-weight: normal;
+    border-radius: 10px;
+    text-shadow:-2px 0 1px #333;
+
+
+}
+
+.nav-header > div.ac_tog:after {
+    content: url('../images/d_2@2x_red.png');
+    position: absolute;
+    display: inline-block;
+    right:35px;
+    top:10px;
+    margin-top: -10px;
+    width: 17px;
+    height: 20px;
+    padding-left: 3px;
+    line-height:18px;
+    font-size: 10px;
+    font-weight: normal;
+    border-radius: 10px;
+    text-shadow:-2px 0 1px #333;
+}
+.time_content_skin{
+
+    background: palevioletred;
+}
+.time_man_skin{
+    color: palevioletred;
+}
+.a_color_skin{
+    color: palevioletred;
+}
+
+.toggle_skin.collapsed{
+    content: url('../images/r_2@2x_red.png');
+    float: right;
+}
+.toggle_skin{
+    content: url('../images/d_2@2x_red.png');
+    float: right;
+}

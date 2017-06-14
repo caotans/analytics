@@ -1,0 +1,10 @@
+
+
+.content{
+	overflow: auto;
+	position: relative;
+    white-space:nowrap;
+	height: 43px;
+    margin-right: 2px;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}

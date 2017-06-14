@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.analytics.web.model.mapper.DataDownloadMapper">
+
+	<resultMap id="SysUser" type="com.analytics.web.model.entity.SysUser">
+		<result property="Id" column="ID"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="userPsw" column="USER_PSW"/>
+	</resultMap>
+
+	<insert id="insert" parameterType="com.analytics.web.model.entity.DataDownload" useGeneratedKeys="true" keyProperty="Id">
+		INSERT INTO DataDownload (
+			<trim prefixOverrides=",">
+			<if test="UserId != null"> ,UserId </if>
+			<if test="AllCode != null"> ,AllCode </if>
+			<if test="AllName != null"> ,AllName </if>
+			<if test="UpTime != null"> ,UpTime </if>
+			</trim>
+		) VALUES (
+			<trim prefixOverrides=",">
+			<if test="UserId != null"> ,#{UserId} </if>
+			<if test="AllCode != null"> ,#{AllCode} </if>
+            <if test="AllName != null"> ,#{AllName} </if>
+            <if test="UpTime != null"> ,#{UpTime} </if>
+			</trim>
+		)
+	</insert>
+
+    <select id="getAll" resultType="com.analytics.web.model.entity.DataDownload">
+        select * from DataDownload where UpTime =( select top 1 a.updateTime from ( select MAX(t.UpTime)as updateTime from DataDownload t group by t.UpTime)a)
+    </select>
+
+	
+	<select id="get" parameterType="java.util.Map" resultType="com.analytics.web.model.entity.DataDownload">
+		SELECT *
+		FROM DataDownload
+		<where>
+			<if test="ItemsId != null"> ItemsId = #{ItemsId} </if>
+            <if test="lx != null"> lx = #{lx} </if>
+            <if test="otherlx != null"> lx != #{otherlx} </if>
+		</where>
+	</select>
+
+    <delete id="delete">
+		DELETE FROM DataDownload
+		WHERE UserId = #{UserId}
+	</delete>
+
+
+</mapper>
