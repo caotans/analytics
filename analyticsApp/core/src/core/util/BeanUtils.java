@@ -1,8 +1,9 @@
 package core.util;
 
 import org.apache.commons.beanutils.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
+
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;

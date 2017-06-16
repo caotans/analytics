@@ -1,4 +1,4 @@
-package com.analytics.web.model.mapper;
+package com.cfw.model.mapper;
 
 
 import java.util.List;

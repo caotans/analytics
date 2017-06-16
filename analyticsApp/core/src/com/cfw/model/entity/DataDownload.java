@@ -1,9 +1,4 @@
-package com.analytics.web.model.entity;
-
-import net.sf.json.JSONArray;
-
-import java.util.Date;
-import java.util.List;
+package com.cfw.model.entity;
 
 /**
  * Created with IntelliJ IDEA.

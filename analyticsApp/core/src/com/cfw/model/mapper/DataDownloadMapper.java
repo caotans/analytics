@@ -1,7 +1,7 @@
-package com.analytics.web.model.mapper;
+package com.cfw.model.mapper;
 
-import com.analytics.web.model.entity.DataDownload;
-import com.analytics.web.model.entity.SysUser;
+
+import com.cfw.model.entity.DataDownload;
 
 /**
  * @Description: 接口
@@ -9,7 +9,7 @@ import com.analytics.web.model.entity.SysUser;
  * @version 1.0
  * @created 
  */
-public interface DataDownloadMapper extends BaseMapper<DataDownload>{
+public interface DataDownloadMapper extends BaseMapper<DataDownload> {
 
 	
 

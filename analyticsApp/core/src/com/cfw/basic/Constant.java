@@ -1,4 +1,4 @@
-package com.cfw.core;
+package com.cfw.basic;
 
 /**
  * @author Ray

@@ -1,11 +1,10 @@
-package com.analytics.web.model.mapper;
-
-import java.sql.SQLException;
-import java.util.Properties;
-
-import javax.sql.DataSource;
+package com.cfw.model.mapper;
 
 import org.apache.ibatis.mapping.DatabaseIdProvider;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.Properties;
 
 public class BigdataDatabaseIdProvider implements DatabaseIdProvider {
 	
